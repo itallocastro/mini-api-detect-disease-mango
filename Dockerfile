@@ -9,4 +9,4 @@ RUN pip install tensorflow "fastapi[all]" numpy Pillow
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 80
