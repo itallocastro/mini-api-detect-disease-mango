@@ -23,6 +23,9 @@ async def predict(file:  UploadFile):
 
         predicted = model.predict(np.array([image]))
         print(predicted)
+
+        await file.close()
+
         return {"result": predicted[0].tolist()}
     except Exception as e:
         print(e)
