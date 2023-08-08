@@ -26,6 +26,9 @@ async def predict(file:  UploadFile):
 
         await file.close()
 
+        del image
+        del image_bytes
+
         return {"result": predicted[0].tolist()}
     except Exception as e:
         print(e)
