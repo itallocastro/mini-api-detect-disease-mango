@@ -4,7 +4,7 @@ import io
 from keras.models import load_model
 import numpy as np
 
-model = load_model('./model_saved')
+model = load_model('./light_weight_model')
 
 
 async def predict(file:  UploadFile):
