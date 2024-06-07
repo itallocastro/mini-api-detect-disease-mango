@@ -4,12 +4,12 @@ import io
 from keras.models import load_model
 import numpy as np
 
-model = load_model('./model_saved')
+model = load_model('./light_weight_model')
 
 
 async def predict(file:  UploadFile):
     try:
-        size_images = (256, 256)
+        size_images = (224, 224)
         print(file.content_type)
         content_type = file.content_type
         if content_type not in ["image/jpeg", "image/png", "image/jpg", "image/*"]:
@@ -32,4 +32,4 @@ async def predict(file:  UploadFile):
         return {"result": predicted[0].tolist()}
     except Exception as e:
         print(e)
-        raise HTTPException(status_code=400, detail='Houve um problema, tente novamente!')
+        raise e
